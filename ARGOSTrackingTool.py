@@ -21,6 +21,10 @@ line_list = file_object.readlines()
 #Close the file
 file_object.close()
 
+#Create empty dictionaries
+date_dict = {}
+location_dict = {}
+
 #Extract one data line into a variable
 for lineString in line_list:
     
@@ -38,5 +42,9 @@ for lineString in line_list:
     obs_lat = lineData[6]     # Observation Latitude
     obs_lon = lineData[7]     # Observation Longitude
     
+    #Add items to dictionaries
+    date_dict[record_id] = obs_date
+    location_dict[record_id] = (obs_lat, obs_lon)
+    
     # Print information to the use
-    print (f"Record {record_id} indicates Sara was seen at {obs_lat}N and {obs_lon}W on {obs_date}")
+    #print (f"Record {record_id} indicates Sara was seen at {obs_lat}N and {obs_lon}W on {obs_date}")
